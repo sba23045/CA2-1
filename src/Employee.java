@@ -9,6 +9,7 @@
  */
 public class Employee {
 
+    public static void main(String[] args) {
     /**
      * @param args the command line arguments
      */
@@ -21,6 +22,7 @@ public class Employee {
     //Static field:
     public static int nextEmpNum = 1;
     
+    //Two Constructors: 
     public Employee() {
         this("Default Name", "Default@gmail.com");
     }
@@ -31,6 +33,20 @@ public class Employee {
         this.empNum = nextEmpNum++;
     }
     
+    //Methods:
+    public String getName() {
+        return name;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public int getEmpNum() {
+        return empNum;
     }
     
-}
+    public void setEmail(String email) {
+        if (email.length() > 3) {
+            this.email = email;
+        }
+    }
+ }
