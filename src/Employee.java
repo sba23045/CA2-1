@@ -8,11 +8,6 @@
  * @author User
  */
 public class Employee {
-
-    public static void main(String[] args) {
-    /**
-     * @param args the command line arguments
-     */
   
     //Instance fields:
     String name;
@@ -48,5 +43,8 @@ public class Employee {
         if (email.length() > 3) {
             this.email = email;
         }
+    }   
+    public static int getNextEmpNum() {
+        return nextEmpNum;
     }
- }
+}
