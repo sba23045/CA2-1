@@ -12,11 +12,24 @@ public class Employee {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-    public static void main(String[] args) { 
+  
+    //Instance fields:
     String name;
     String email;
     int empNum;
+    
+    //Static field:
+    public static int nextEmpNum = 1;
+    
+    public Employee() {
+        this("Default Name", "Default@gmail.com");
+    }
+    
+    public Employee(String name, String email) {
+        this.name = name;
+        this.email = email;
+        this.empNum = nextEmpNum++;
+    }
     
     }
     
