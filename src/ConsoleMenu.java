@@ -10,21 +10,25 @@ import java.util.Scanner;
  *
  * @author User
  */
+//Scanner Input:
 public class ConsoleMenu {
     public Company company;
     public Scanner scanner;
     
+    //Constrcutor:
     public ConsoleMenu(Company company) {
         this.company = company;
         this.scanner = new Scanner(System.in);
     }
     
+    //Method to run Console and Login Check:
     public void run() {
         if (!login()) {
             System.out.println("Login Failed");
             return;
         }
         
+        //Main Menu Loop:
         boolean running = true;
         while (running) {
             System.out.println("\n1. View Current Staff\n2. Add New Staff\n3. Remove Staff\n4. Exit");
@@ -32,6 +36,7 @@ public class ConsoleMenu {
             int option = scanner.nextInt();
             scanner.nextLine();
         
+        //Select Otion of the Menu:
         switch (option) {
             case 1 -> viewStaff();
             case 2 -> addNewStaff();
@@ -41,7 +46,7 @@ public class ConsoleMenu {
         }
     }
 }
-
+    //Method User Login:
     public boolean login() {
         System.out.print("Enter username: ");
         String username = scanner.nextLine();
@@ -50,6 +55,7 @@ public class ConsoleMenu {
         return "Gnomeo".equals(username) && "smurf".equals(password);
         }
 
+    //Methods:
     public void viewStaff() {
         int empNumThreshold = 4;
         company.listEmployees(empNumThreshold);
@@ -71,6 +77,7 @@ public class ConsoleMenu {
         scanner.nextLine();
     }
 
+    //Main Method:
     public static void main(String[] arg) {
         Company company = new Company();
         ConsoleMenu menu = new ConsoleMenu(company);
