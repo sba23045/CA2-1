@@ -27,7 +27,7 @@ public class ConsoleMenu {
         
         boolean running = true;
         while (running) {
-            System.out.println("\n1. View Current Staff\n2. Add New Staff\n3. Exit");
+            System.out.println("\n1. View Current Staff\n2. Add New Staff\n3. Remove Staff\n4. Exit");
             System.out.print("Select an Option: ");
             int option = scanner.nextInt();
             scanner.nextLine();
@@ -35,7 +35,8 @@ public class ConsoleMenu {
         switch (option) {
             case 1 -> viewStaff();
             case 2 -> addNewStaff();
-            case 3 -> running = false;
+            case 3 -> removeStaff();
+            case 4 -> running = false;
             default -> System.out.println("Invalid option selected. PLease try again");
         }
     }
@@ -61,6 +62,13 @@ public class ConsoleMenu {
         String email = scanner.nextLine();
         Employee newEmployee = new Employee(name, email);
         company.addNewStaff(newEmployee);
+    }
+    
+    public void removeStaff() {
+        System.out.print("Enter Employee Number: ");
+        int empNum = scanner.nextInt();
+        company.removeStaff(empNum);
+        scanner.nextLine();
     }
 
     public static void main(String[] arg) {
