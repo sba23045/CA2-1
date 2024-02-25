@@ -24,38 +24,33 @@ public class ConsoleMenu {
             System.out.println("Login Failed");
             return;
         }
-    }
+        
+        boolean running = true;
+        while (running) {
+            System.out.println("View Current Staff. Add New Staff. Exit");
+            System.out.print("Select an Option: ");
+            int option = scanner.nextInt();
+            scanner.nextLine();
         
         switch (option) {
-            case 1: 
-                viewStaff();
-                break;
-            case 2:
-                addNewStaff();
-                break;
-            case 3:
-                removeStaff();
-                break;
-            case 4:
-                running = false
-                break;
-            default:
-                System.out.println("Invalid option selected. PLease try again");
-                break;
+            case 1 -> viewStaff();
+            case 2 -> addNewStaff();
+            case 3 -> running = false;
+            default -> System.out.println("Invalid option selected. PLease try again");
         }
     }
 }
 
 public boolean login() {
 System.out.print("Enter username: ");
-String = scanner.nextLine();
+String username = scanner.nextLine();
 System.out.print("Enter password: ");
 String password = scanner.nextLine();
-return "Gnomeo".equals(username) && "smurf".equals(passowrd);
+return "Gnomeo".equals(username) && "smurf".equals(password);
 }
 
 public void viewStaff() {
-int empNumThreshold = 3
+int empNumThreshold = 3;
 company.listEmployees(empNumThreshold);
 
 public void addNewStaff() {
@@ -71,5 +66,6 @@ public static void main(String[] arg) {
 Company company = new Company();
 ConsoleMenu menu = new ConsoleMenu(company);
 menu.run();
+}
 }
 
