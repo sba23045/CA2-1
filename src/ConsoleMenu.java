@@ -27,7 +27,7 @@ public class ConsoleMenu {
         
         boolean running = true;
         while (running) {
-            System.out.println("View Current Staff. Add New Staff. Exit");
+            System.out.println("\n1. View Current Staff\n2. Add New Staff\n3. Exit");
             System.out.print("Select an Option: ");
             int option = scanner.nextInt();
             scanner.nextLine();
