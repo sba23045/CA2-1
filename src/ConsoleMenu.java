@@ -18,6 +18,13 @@ public class ConsoleMenu {
         this.company = company;
         this.scanner = new Scanner(System.in);
     }
+    
+    public void run() {
+        if (!login()) {
+            System.out.println("Login Failed");
+            return;
+        }
+    }
         
         switch (option) {
             case 1: 
