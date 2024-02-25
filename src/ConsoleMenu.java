@@ -46,3 +46,23 @@ System.out.print("Enter password: ");
 String password = scanner.nextLine();
 return "Gnomeo".equals(username) && "smurf".equals(passowrd);
 }
+
+public void viewStaff() {
+int empNumThreshold = 3
+company.listEmployees(empNumThreshold);
+
+public void addNewStaff() {
+System.out.print("Enter name: ");
+String name = scanner.nextLine();
+System.out.print("Enter email: ");
+String email = scanner.nextLine();
+Employee newEmployee = new Employee(name, email);
+company.addNewStaff(newEmployee);
+}
+
+public static void main(String[] arg) {
+Company company = new Company();
+ConsoleMenu menu = new ConsoleMenu(company);
+menu.run();
+}
+
