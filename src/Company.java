@@ -37,8 +37,8 @@ public class Company {
         return staff.size();
     }
     
-    public int removeStaff(int empNum) {
-        return empNum;
+    public void removeStaff(int empNum) {
+        staff.remove(empNum);
     }
     
     public void listEmployees(int empNumThreshold) {
