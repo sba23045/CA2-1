@@ -15,23 +15,30 @@ import java.util.Iterator;
 public class Company {
     public String companyName;
     public ArrayList<Employee> staff;
-    
+
+    //Default Constructor:
     public Company() {
         this("Business Gnómes Ltd");
         this.staff = new ArrayList<>();
     }
-    
+
+    //Overloaded Constructor:    
     public Company(String companyName) {
         this.companyName = companyName;
         this.staff = new ArrayList<>();
     }
     
+    //Methods:
     public void addNewStaff(Employee employee) {
         staff.add(employee);
     }
     
     public int getStaffNumber() {
         return staff.size();
+    }
+    
+    public int removeStaff(int empNum) {
+        return empNum;
     }
     
     public void listEmployees(int empNumThreshold) {
@@ -42,9 +49,5 @@ public class Company {
                 System.out.println(emp.getName());
             }
         }
-    }
-
-    void removeStaff(int empNum) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

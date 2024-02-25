@@ -37,7 +37,7 @@ public class ConsoleMenu {
             case 2 -> addNewStaff();
             case 3 -> removeStaff();
             case 4 -> running = false;
-            default -> System.out.println("Invalid option selected. PLease try again");
+            default -> System.out.println("Invalid option. PLease try again");
         }
     }
 }
@@ -51,7 +51,7 @@ public class ConsoleMenu {
         }
 
     public void viewStaff() {
-        int empNumThreshold = 3;
+        int empNumThreshold = 4;
         company.listEmployees(empNumThreshold);
     }
 
