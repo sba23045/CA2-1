@@ -39,4 +39,10 @@ public class ConsoleMenu {
     }
 }
 
-
+public boolean login() {
+System.out.print("Enter username: ");
+String = scanner.nextLine();
+System.out.print("Enter password: ");
+String password = scanner.nextLine();
+return "Gnomeo".equals(username) && "smurf".equals(passowrd);
+}
