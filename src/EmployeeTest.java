@@ -26,10 +26,10 @@ public class EmployeeTest {
         System.out.println("Next Employee Number: " + Employee.getNextEmpNum());
     
     //Search and Display the name of each of the employees:
-        int m = 0;
-        for (Employee emp : projectGroup) {
-            if (emp.getEmpNum() > m) {
-                System.out.println(emp.getName());
+        int m = 2;
+        for (Employee employee : projectGroup) {
+            if (employee.getEmpNum() > m) {
+                System.out.println(employee.getName());
             }
         }
     }

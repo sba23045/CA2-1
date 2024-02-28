@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 
 
@@ -15,22 +16,29 @@ import java.util.Iterator;
 public class Company {
     public String companyName;
     public ArrayList<Employee> staff;
+    public HashSet<Integer> staffSet;
 
     //Default Constructor:
     public Company() {
-        this("Business Gnómes Ltd");
+        this.companyName = "Business Gnómes Ltd";
         this.staff = new ArrayList<>();
+        this.staffSet = new HashSet<>();
     }
 
     //Overloaded Constructor:    
     public Company(String companyName) {
         this.companyName = companyName;
         this.staff = new ArrayList<>();
+        this.staffSet = new HashSet<>(); 
     }
     
     //Methods:
     public void addNewStaff(Employee employee) {
-        staff.add(employee);
+        if (staffSet.add(employee.getEmpNum())) {
+            staff.add(employee);
+        } else {
+            System.out.println("Employee with this number already in the system.");
+        }
     }
     
     public int getStaffNumber() {
@@ -38,15 +46,21 @@ public class Company {
     }
     
     public void removeStaff(int empNum) {
-        staff.remove(empNum);
+        staff.removeIf(employee -> {
+            boolean match = employee.getEmpNum() == empNum;
+            if (match) {
+                staffSet.remove(empNum);
+            }
+            return match;
+        });
     }
     
     public void listEmployees(int empNumThreshold) {
         Iterator<Employee> iterator = staff.iterator();
         while (iterator.hasNext()) {
-            Employee emp = iterator.next();
-            if (emp.getEmpNum() > empNumThreshold) {
-                System.out.println(emp.getName());
+            Employee employee = iterator.next();
+            if (employee.getEmpNum() > empNumThreshold) {
+                System.out.println("Employee Name: " + employee.getName() + ", Employee Number: " + employee.getEmpNum());
             }
         }
     }
