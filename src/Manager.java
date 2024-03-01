@@ -7,10 +7,11 @@
  *
  * @author User
  */
+
 //SubClass
 public class Manager extends Employee {
-    public String username;
-    public String password;
+    private String username;
+    private String password;
     
     //Add Super Class Constructor:
     public Manager(String name, String email, String username, String password) {

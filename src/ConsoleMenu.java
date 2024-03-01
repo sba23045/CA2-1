@@ -10,10 +10,11 @@ import java.util.Scanner;
  *
  * @author User
  */
+
 //Scanner Input:
 public class ConsoleMenu {
-    public Company company;
-    public Scanner scanner;
+    private final Company company;
+    private final Scanner scanner;
     
     //Constrcutor:
     public ConsoleMenu(Company company) {
@@ -47,7 +48,9 @@ public class ConsoleMenu {
     }
 }
     //Method User Login:
-    public boolean login() {
+    private boolean login() {
+        System.out.print("Welcome to Gnómes Ltd. Please, press enter and login into your Account.");
+        scanner.nextLine();
         System.out.print("Enter username: ");
         String username = scanner.nextLine();
         System.out.print("Enter password: ");
@@ -56,12 +59,12 @@ public class ConsoleMenu {
         }
 
     //Methods:
-    public void viewStaff() {
+    private void viewStaff() {
         int empNumThreshold = 4;
         company.listEmployees(empNumThreshold);
     }
 
-    public void addNewStaff() {
+    private void addNewStaff() {
         System.out.print("Enter name: ");
         String name = scanner.nextLine();
         System.out.print("Enter email: ");
@@ -70,7 +73,7 @@ public class ConsoleMenu {
         company.addNewStaff(newEmployee);
     }
     
-    public void removeStaff() {
+    private void removeStaff() {
         System.out.print("Enter Employee Number: ");
         int empNum = scanner.nextInt();
         company.removeStaff(empNum);

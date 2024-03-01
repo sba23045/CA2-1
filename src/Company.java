@@ -13,10 +13,11 @@ import java.util.Iterator;
  *
  * @author User
  */
+
 public class Company {
-    public String companyName;
-    public ArrayList<Employee> staff;
-    public HashSet<Integer> staffSet;
+    private String companyName;
+    private ArrayList<Employee> staff;
+    private HashSet<Integer> staffSet;
 
     //Default Constructor:
     public Company() {

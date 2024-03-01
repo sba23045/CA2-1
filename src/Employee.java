@@ -10,12 +10,12 @@
 public class Employee {
   
     //Instance fields:
-    String name;
-    String email;
-    int empNum;
+    private String name;
+    private String email;
+    private int empNum;
     
     //Static field:
-    public static int nextEmpNum = 1;
+    private static int nextEmpNum = 1;
     
     //Two Constructors: 
     public Employee() {
