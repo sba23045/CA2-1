@@ -3,10 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 
+//GITHUB: https://github.com/sba23045/CA2-1.git
+
 /**
  *
  * @author User
  */
+
 public class Employee {
   
     //Instance fields:
